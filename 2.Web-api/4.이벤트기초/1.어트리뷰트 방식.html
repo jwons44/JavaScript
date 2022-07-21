@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn" onclick="greeting()">클릭하세요</button>
+    <button id="btn2" onmouseenter="greeting()">마우스를 올리세요</button>
+    <button id="btn3" onmouseleave="greeting()">마우스를 치우세요</button>
+    <!-- 이벤트 발동 조건(이벤트 트리거)-->
+    <script>
+        //속성방식(태그에 직접 걸어주는 방식) 기본방식,간단한 방식에서만 사용 요즘은 잘 안씀
+
+        //이벤트 핸들러(브라우저에게 전해줄 콜백 함수) 정의
+        function greeting(){
+            alert('안녕하세용');
+        }
+    </script>
+</body>
+</html>

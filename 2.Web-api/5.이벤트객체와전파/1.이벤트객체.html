@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>아무곳이나 클릭하세요!</p>
+    <em class="message"></em>
+
+    <script>
+        const $em = document.querySelector('.message');
+
+        //문서 전체에 이벤트 핸들러 등록
+
+        /*이벤트가 발생하면 이벤트에 대한 다양한 정보가 들어있는
+        이벤트 객체가 동적으로 생성된다.
+        생성된 이벤트 객체는 이벤트 핸들러함수의 첫번째 인수로 자동 전달된다.
+        어떤 이벤트가 발생했느냐에 따라 그에 맞는 이벤트 객체가 전달됨.
+        핸들러함수 매개값에 이름을 주고 그 변수로 여러가지 기능확인 할 수 있다.*/
+
+        document.addEventListener('click', (e) => { //매개값으로 이벤트 객체가 전달됨 MouseEvent
+            console.log(e);//PointerEvent
+            $em.textContent = `x: ${e.clientX}, y:${e.clientY}`;//마우스 좌표
+        });
+    </script>
+</body>
+</html>

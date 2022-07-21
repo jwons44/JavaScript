@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">클릭하세요!</button>
+    <button id="btn2">마우스를 올리세요~</button>
+    <button id="btn3">마우스를 치우세요~</button>
+
+    <script>
+        //스크립트 단에서 이벤트 실행
+        //이벤트 핸들러 정의
+        function hello() {
+            alert('hello~');
+        }
+        
+        const $btn = document.getElementById('btn');
+        const $btn2 = document.getElementById('btn2');
+        const $btn3 = document.getElementById('btn3');
+
+        // $btn.onclick = hello; //함수호출이지만 onclick속성에 함수를 넣는거라서 () 안씀!
+        $btn.onclick = function(){ //함수바로 전달하는 것도 가능
+            alert('안녕하세요');
+        }
+        $btn.onclick = function() {
+            alert('안하세요');
+        }//같은요소에 이벤트 2개 걸면 마지막 이벤트만 발동.
+
+        $btn2.onmouseenter = function() {
+            alert('하잉');
+        }
+
+        $btn3.onmouseleave = () => alert('안녕'); //함수1줄로 작성
+
+        //핸들러제거
+        $btn3.onmouseleave = null; //함수와 연결끊기
+
+        //프로퍼티 방식은 하나의 요소에 이벤트 하나의 이벤트 핸들러만 바인딩 할 수있는 단점이 있다.
+
+    </script>
+</body>
+</html>

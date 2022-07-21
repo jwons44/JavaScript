@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var greetings;
+        greetings = "안녕하세요";
+        greetings = '하잉'; //주로 사용
+        greetings = `반값습니다`;
+
+        var ex_str = '그는 나에게 "위험해!" 라고 말했다.';
+        ex_str = "그는 나에게 \"위험해!\" 라고 말했다."; //java에서는 이렇게 써야함
+
+        // 템플릿 리터럴 : 백틱(``) 공백,들여쓰기까지 문자로 인정시켜 줌. 
+        var temp = 
+        `<ul>
+            <li>
+                <a href="#">Home</a>
+            </li>
+        </ul>`;
+        console.log(temp);
+
+        //문자열 연결
+        var month = 8;
+        var day = 15;
+        var anni = '광복절';
+
+        console.log(month + '월 ' + day + '일은 ' + anni +'입니다.');
+
+        //템플릿 리터럴을 이용한 포맷팅 출력 방식(ES6이후)
+        console.log(`${month}월 ${day}일은 ${anni}입니다.`);
+
+    </script>
+    
+</body>
+</html>

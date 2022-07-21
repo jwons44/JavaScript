@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .root{
+            width: 500px;
+            height: 500px;
+            background: green;
+        }
+        .parent{
+            width: 50%;
+            height: 50%;
+            background: orange;
+        }
+        .child{
+            width: 50%;
+            height: 50%;
+            background: skyblue;
+        }
+
+    </style>
+</head>
+<body>
+    <a href="https://www.naver.com">네이버로 이동</a>
+
+    <br>
+    <div class="root">
+        <div class="parent">
+            <div class="child"></div>
+        </div>
+    </div>
+
+    <script>
+        //root > parent > child 이벤트들이 버블링으로 인해서 다 발생.
+        //자식 > 자식의 부모 > 부모 순으로 이벤트가 발생 : 버블링
+        document.querySelector('.root').addEventListener('click', e => {
+            alert('root');            
+        });
+
+        document.querySelector('.parent').addEventListener('click', e => {
+            alert('parent');
+
+        },true);//addEventListener의 함수 선언 후 2번째 매개값으로 true를 주면 
+        //부모 > 자식의 부모 > 자식 순으로 이벤트가 발생 : 캡쳐링
+
+        document.querySelector('.child').addEventListener('click', e => {
+            alert('child');
+            // e.stopPropagation(); //버블링 중지
+        },true);
+        
+        //a태그에 이벤트걸기
+        const $link = document.querySelector('a');
+        $link.addEventListener('click', e => {
+            if(!confirm('정말 이동하시겠어요~?')) {//취소를 누르면
+                e.preventDefault(); //태그의 고유 기능을 막아서 페이지 이동 못하게함
+            }
+        })
+    </script>
+</body>
+</html>

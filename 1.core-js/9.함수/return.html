@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //void함수 : return값이 없는 함수,단독으로 호출해서 사용.
+        //다른 함수의 인자(매개값)로 전달이 불가능함.
+        function greetings(nickname) {
+            var bad_nick = ['멍충이','바보','쓰레기','양아치'];
+            if(bad_nick.includes(nickname)){
+                console.log('그런 나쁜말은 하지 마세요!!');
+                return; //함수 강제 종료.
+            }
+            console.log(nickname + '님 안녕하세요.');
+        }
+
+        var result = greetings('바보');//void함수는 단독으로 사용해야함!
+        console.log(result); //undefined
+
+        /*function operateAll(n1, n2) {
+            return n1 + n2; //return 실행 후 함수 종료!!
+            return n1 - n2;
+            return n1 * n2;
+            return n1 / n2;
+        }*/
+        //여러값을 리턴 받고 싶을때
+        function operateAll(n1, n2) {
+            return { //객체로 묶어서 리턴
+                plus : n1 + n2,
+                minus : n1 + n2,
+                multi : n1 * n2,
+                dicide : n1 / n2
+            };
+        }
+        var results = operateAll(10, 2);
+        console.log(results.plus);
+        console.log(results['multi']);
+    </script>
+</body>
+</html>

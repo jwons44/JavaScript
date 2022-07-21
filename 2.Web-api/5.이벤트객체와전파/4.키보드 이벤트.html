@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">
+    <p class="msg"></p>
+
+    <script>
+        const $input = document.querySelector('input');
+        const $msg = document.querySelector('.msg');
+
+        $input.addEventListener('keyup', e => {
+            console.log(e.key); //키보드에 입력한 값이 보여짐
+            if(e.key === 'Enter'){
+                $msg.textContent = e.target.value; //인풋창에 적은거 보여주기
+                e.target.value = ''; //인풋창 비우기
+            } else if(e.key === 'Escape'){ //'esc누르면 메세지 지워짐'
+                $msg.textContent = '';
+            }
+        });
+    </script>
+</body>
+</html>

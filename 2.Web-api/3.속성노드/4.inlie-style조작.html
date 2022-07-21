@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="h" style="color: red; font-size: 3rem;">Hello</div>
+
+    <script>
+        //style프로퍼티로 JS에서 style바로 변경가능(인라인스타일로 들어감)
+        const $h = document.getElementById('h');
+
+        //CSS에서는 원래 케밥케이스인데 JS에서는 카멜케이스로 쓰면됨
+        $h.style.color = 'orange';
+        $h.style.background = 'orangered';
+        $h.style.fontSize = '50px';
+    </script>
+</body>
+</html>

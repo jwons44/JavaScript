@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="name" value="kim" class="user-name">
+    
+    <p id="text">Hello</p>
+
+    <script>
+        //속성얻기 getAttribute
+        const $input = document.querySelector('input[type="text"]');
+
+        //input의 value속성의 값을 얻고 싶다.
+        // const inputValue = $input.attributes.value.value; 아래 같은 코드
+        const inputValue = $input.getAttribute('value');
+        console.log(inputValue);
+
+        //속성변경 setAttribute
+        //value속성의 값을 변경
+        // $input.attributes.value.value = 'lee';
+        $input.setAttribute('value','안녕하세요');
+
+        //p태그에 title 속성 추가
+        const $paragraph = document.getElementById('text');
+        $paragraph.setAttribute('title','메롱');
+
+        //삭제전에 속성 있는지 확인 후 진행
+        console.log($paragraph.hasAttribute('class')); //false
+        $paragraph.removeAttribute('class'); //에러는 안나지만 class는 없는 속성
+
+        if(!$input.hasAttribute('class')){ //해당 요소에 속성이 있는지 확인
+            //없으면 클래스 부여(setAttribute)
+        } else {
+            //클래스를 제거
+            $input.removeAttribute('class');
+        }
+    </script>
+</body>
+</html>

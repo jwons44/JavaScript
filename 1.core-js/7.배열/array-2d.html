@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //이차원 배열
+        //우리반 학생들 4과목 점수(국영수탐)
+        // var kim = [67,89,46,34];
+        // var lee = [100,46,24,98];
+        // var park = [33,35,67,85];
+
+        var ourStudentScores = [
+            [67,89,46,34],
+            [100,46,24,98],
+            [33,35,67,85],
+            [100,94,75,34]
+        ];
+
+        console.log(ourStudentScores);
+        console.log(ourStudentScores[2]);
+        console.log(ourStudentScores[0][1]);//첫번째 학생의 두번째 점수
+
+        //우리반 한 학생의 평균의 총합을 저장할 변수
+        var ourAverages = 0;
+        for(var studentScores of ourStudentScores) {
+            var eachTotal = 0; //한 학생의 4과목 총점
+            for(var score of studentScores) {
+                eachTotal += score;
+            }
+           // 한 학생의평균 점수 구하기
+            var eachAvg = eachTotal / studentScores.length;
+            ourAverages += eachAvg;
+        }
+        var classAvg = ourAverages / ourStudentScores.length; //반 평균
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="greeting">Hello<span>World!</span></div>
+
+    <script>
+        //text 얻기
+        const $div = document.getElementById('greeting');
+        console.log($div.childNodes[0].nodeValue);//div의첫번째자식의 노드값 Hello
+        console.log($div.textContent);//텍스트만 바로 가지고올 수 있음,단 모든 text가 옴 HelloWorld!
+
+        //text 추가
+        //textContent는 마크업(태그)을 제외한 텍스트 전체를 지목.
+        //태그르 작성해도 텍스트로 인식합니다.
+        $div.textContent = '<span>안녕</span>하세용';//브라우저에 그대로 나옴 <span>안녕</span>하세용 
+    </script>
+
+</body>
+</html>

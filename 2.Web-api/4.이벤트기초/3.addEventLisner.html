@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">클릭!</button>
+    
+    <script>
+        const $btn = document.getElementById('btn');
+
+        function hello() {
+            alert('hello~');
+        }
+
+        $btn.addEventListener('click',hello);//함수의 매개값으로 함수를 전달. on빼고작성         
+        $btn.addEventListener('click',function() {
+            alert('World');
+        });
+        $btn.addEventListener('click', () => {
+            alert('bye~');
+        }); //이벤트 여러개 달기
+
+        //이벤트 핸들러 제거(이름이 있는 함수만 제거가능)
+        $btn.removeEventListener('click',hello);
+
+    </script>
+</body>
+</html>

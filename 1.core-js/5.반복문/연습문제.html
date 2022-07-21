@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var cCount = 0, iCount = 0;
+        while(true){
+            var rn1 = Math.floor(Math.random()*20 + 1);
+            var rn2 = Math.floor(Math.random()*20 + 1);
+
+            //부호를 결정하기 위해 0 1 2의 랜덤 정수 생성
+            var rn3 = Math.floor(Math.random()*3);
+
+            var real_answer;
+            var operator_mark;
+            if(rn3 == 0){
+                operator_mark = '+';
+                real_answer = rn1 + rn2;
+            } else if(rn3 == 1){
+                operator_mark = '-';
+                real_answer = rn1 - rn2;
+            }else {
+                operator_mark = 'x';
+                real_answer = rn1 * rn2;
+            }
+
+            var answer = prompt(`${rn1} ${operator_mark} ${rn2} = ??`);
+
+            if(answer === '그만') {
+                break;
+            }
+
+            if(answer == real_answer){
+                alert('정답입니다.');
+                cCount++;
+            }else {
+                alert('오답입니다.');
+                iCount++;
+            }
+        }
+        alert(`프로그램이 종료되었습니다.
+        # 정답 횟수 :${cCount}회, 오답 횟수: ${iCount}회`);
+
+
+
+
+        /*var num1 = Math.floor(Math.random()*20 +1);
+        var num2 = Math.floor(Math.random()*20 +1);
+        var calc;
+        var answr = 0;
+        var wAns = 0;
+        var end;
+        while(true){
+            var calc = +prompt('결과를 입력하세요.' + num1 + '+' +  num2);
+            if(clac === num1 + num2){
+                answr += answr+1;
+                alert("정답입니다.");
+            }else {
+                wAns += wAns+1;
+                alert('오답입니다.');
+            }
+            if(end === '그만') break;
+        }
+        alert('정답:'+answr + ',오답:' +wAns);*/
+
+
+    </script>
+</body>
+</html>

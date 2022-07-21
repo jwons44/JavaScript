@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #fruits{
+            padding: 50px;
+            border: 2px solid orange;
+        }
+        #fruits > li {
+            background: green;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <ul id="fruits">
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Grape</li>
+    </ul>
+
+    <script>
+        const $fruits = document.getElementById('fruits');
+
+        //li에는 이벤트 없고 ul에만 이벤트를 걸었는데 자식에게 이벤트가 전파됨
+        //부모 이벤트가 내려가면서 자식이벤트를 확인함(캡쳐링).
+        $fruits.addEventListener('click', e => {
+            console.log('ul에 클릭 이벤트가 발생!'); //브라우저에서 li를 누르면 아래와 같은 결과가 나옴
+            console.log('이벤트 핸들러가 붙은 타겟:' + e.currentTarget); //[object HTMLUListElement]
+            console.log('실제 이벤트가 발생한 요소:' + e.target); //[object HTMLLIElement]
+        });
+
+        $fruits.firstElementChild.addEventListener('click', e => {
+            console.log('apple의 클릭 이벤트가 발생!');
+            //apple의 클릭 이벤트가 발생! , ul에 클릭 이벤트가 발생! 두개가 발동이 됨
+            //자식이벤트가 부모이벤트를 확인하며 올라감(버블링)
+
+            //이벤트 전파를 중단(버블링 방지)하는 법
+            e.stopPropagation();//apple이벤트만 실행됨.
+        });
+
+
+    </script>
+</body>
+</html>

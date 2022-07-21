@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="fruits">
+        <li class="fruit apple">Apple</li>
+        <li class="fruit banana">Banana</li>
+        <li class="fruit grape">Grape</li>
+    </ul>
+    <script>
+        const $elements = document.getElementsByClassName('fruit');
+        console.log($elements);//HTMLCollection(3) [li.fruit.apple, li.fruit.banana, li.fruit.grape]
+
+        const $banana = document.getElementsByClassName('banana');
+        console.log($banana); //HTMLCollection [li.fruit.banana]
+        // $banana.style.color = 'yellow'; htmlCollection이기 때문에 이렇게 쓰면 에러
+        $banana[0].style.color = 'yellow';
+
+    </script>
+</body>
+</html>

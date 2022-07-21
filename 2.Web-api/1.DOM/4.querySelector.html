@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- querySelector 제일 많이 사용함-->
+    <ul id="fruits">
+        <li class="fruit apple">Apple</li>
+        <li class="fruit banana">Banana</li>
+        <li class="fruit grape">Grape</li>
+    </ul>
+    <script>
+        //const $elem = document.querySelector('.banana');//CSS선택자
+        // const $elem = document.querySelector('#fruits > li:nth-child(2)');
+        // const $elem = document.querySelector('li[class="fruit banana"]');//속성선택자
+        const $elem = document.querySelector('li.apple + li'); //인접형제선택자
+        console.log($elem); //li.fruit.banana
+        $elem.style.color = 'yellow';
+
+        //요소를 여러개 리턴 querySelectorAll() 
+        const $element = document.querySelectorAll('#fruits > li');
+        console.log($element);
+        //NodeList(3) [li.fruit.apple, li.fruit.banana, li.fruit.grape]
+        
+        //반복문 사용가능
+        for(let $ele of $element){
+            $ele.style.background = 'red';
+        }
+
+        //없는 선택자 지목 시 null이 아니라 빈 노드리스트 객체가 리턴됨.
+        const $test = document.querySelectorAll('.peach');//없는 요소
+        console.log($test);//빈 NodeList []
+    </script>
+</body>
+</html>

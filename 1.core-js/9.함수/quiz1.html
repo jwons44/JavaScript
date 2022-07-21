@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //n개의 정수를 전달하면 해당 정수들의 총합과 평균을 반환하는 함수 정의.
+        //기본
+        function calcTotAvg(...nums){
+            var total = 0;
+            for(var n of nums){
+                total += n;
+            }
+            var avg = total/nums.length;            
+            return {
+                total : total,
+                avg : vag
+            };
+        }
+
+        //화살표 함수
+        var calcTotAvg = (...nums) => {
+            for(var n of nums){
+                total += n;
+            }
+            var avg = total/nums.length; 
+            return {total, avg}; //ES6 객체 요소 이름과 값이 같을때사용 가능
+        }
+        
+        var calc = calcTotAvg(10,20,30,40,50,60);
+        console.log('총합' + calc.total, '평균' + calc.avg);
+    </script>
+</body>
+</html>

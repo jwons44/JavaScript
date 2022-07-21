@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // User user = new User(); java클래스가 없으면 객체 생성 X
+
+        //객체 생성(java 맵이랑 비슷)
+        var dog = {
+            name : '똘이',
+            kind : '말티즈',
+            age : 7,
+            favorite : ['산책','간식']
+        };
+
+        var cat = {
+            name : '야옹이',
+            kind : '페르시안',
+            age : '3',
+            favorite : ['장난감','츄르','실뭉치']
+        };
+        console.log(typeof cat); //object
+
+        //객체 프로퍼티 참조
+        console.log(dog.name);
+        console.log(cat.name);
+
+        console.log(cat.favorite[1]);//츄르
+
+        dog.favorite.push('누나');
+        console.log(dog);
+
+        //프로퍼티 참조 다른 방식
+        console.log(dog.kind);
+        console.log(dog['kind']);
+
+        //프로퍼티 값 수정
+        dog.age = 5;
+        cat.favorite[1] = '고등어';
+
+        //프로퍼티 동적 추가
+        dog.owner = '민트';
+
+        //프로퍼티 삭제
+        delete dog.owner;
+
+        //for - in(ES6이후) 객체 요소 반복문 이용해서 꺼내기
+        for(var key in cat){
+            console.log('cat요소:'+cat[key]);
+        }
+
+        //객체의 프로퍼티 키의 존재 유무 확인(in 키워드)
+        var flag = 'kind' in cat;
+        console.log(flag);//ture 
+    </script>
+</body>
+</html>

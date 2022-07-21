@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //지도 api 사용시에 사용
+        
+        //성공시 실행할 콜백 함수
+        function success(position) {
+            console.log(position);
+            console.log('위도:' + position.coords.latitude); //위도:37.257216
+            console.log('경도:' + position.coords.longitude); //경도:127.2184832
+        }
+
+        //실패시 실행할 콜백 함수
+        function fail(error) {
+            alert('위치 정보를 얻는 데 실패했습니다. 위치 정보를 승인해 주세요.');
+            console.log(error);
+        }
+
+        (function() { //자동실행함수
+            navigator.geolocation.getCurrentPosition(success, fail);
+        })();
+    </script>
+</body>
+</html>

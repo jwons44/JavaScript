@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="name" value="kim" class="user-name">
+    <script>
+        //노드의 속성 가져오기
+        const $input = document.querySelector('input');
+        console.log($input.attributes); //NamedNodeMap 객체
+        console.log($input.attributes[0].value);//첫번째 속성의 값
+        console.log($input.attributes.id.value);//id 속성의 값
+        console.log($input.attributes.value.value);//value 속성의 값
+
+        //속성값 변경
+        $input.attributes.value.value = 'lee';
+        $input.attributes.type.value = 'password';
+    </script>
+</body>
+</html>

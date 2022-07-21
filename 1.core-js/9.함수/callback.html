@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //콜백 함수(비동기적 프로그래밍 방식:이벤트 발생하면 실행)
+        //동기적 프로그래밍 방식:순차적으로 실행
+        function temp(i){
+            if(i%2 === 0){
+                console.log(i);
+            }
+        } //미리 함수 선언하고 매개값으로 전달
+
+        function showNumbers(n, func){ //함수의 매개값으로 함수가 전달됨
+            for(var i = 1; i<=n; i++){
+                func(i);
+            }
+        }
+        showNumbers(10, temp);
+        
+        /* 위에랑 같은 코드,즉석에서 함수 선언
+        showNumbers(10, i => {
+            if(i%2 === 0) {
+                console.log(i);
+            }
+        })*/
+
+        //이벤트 처리에서 많이 사용
+        var plusMinus = function(a, b, callback) {
+            callback(a + b, a - b);
+        }
+        plusMinus(10, 20 , function(res1, res2){
+            console.log(res1); //30
+            console.log(res2); //-10
+        });
+
+    </script>
+</body>
+</html>

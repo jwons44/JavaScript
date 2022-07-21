@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var ex = 10 + '20'; // 덧셈은 String
+        console.log(ex); //'1020'
+
+        ex = 10 * '3'; //곱셈,뺄셈은 number
+        console.log(ex); //30
+
+        var ex2 = 100 + ''; //'100'
+        console.log(ex2);
+
+        //문자열 타입의 암묵적 숫자 변환
+        ex2 = +'550'; //앞에 + 붙이면 number 타입으로 변환
+        ex2 = true + '';
+
+        //논리 타입의 암묵적 숫자 변환
+        ex2 = +false; //0
+        ex2 = +null; //0
+        console.log(ex2);
+    </script>
+</body>
+</html>
